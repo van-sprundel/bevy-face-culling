@@ -1,8 +1,4 @@
-mod debug;
-
-use crate::debug::DebugPlugin;
 use bevy::prelude::*;
-use bevy::render::camera::PerspectiveProjection;
 use bevy::render::mesh::Indices;
 use bevy::render::pipeline::PrimitiveTopology;
 
@@ -128,7 +124,6 @@ fn block_update(
             commands.spawn_bundle(PbrBundle {
                 mesh: meshes.add(gen_cube(chunk.neighbor_blocks(block.pos))),
                 material: materials.add(StandardMaterial {
-                    // base_color_texture: materials.add(block1.texture),
                     ..Default::default()
                 }),
                 transform: Transform::from_xyz(
